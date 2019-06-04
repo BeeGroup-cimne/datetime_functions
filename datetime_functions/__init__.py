@@ -59,7 +59,7 @@ def date_n_month(date, n_month):
     :return: the same date minus the "n_month_back" month
     """
     month = date.month + n_month
-    year = date.year + month / 12
+    year = int(date.year + month / 12)
     month = (month % 12) if (month % 12) != 0 else 12
     day = min(date.day, calendar.monthrange(year, month)[1])
     hour = date.hour
